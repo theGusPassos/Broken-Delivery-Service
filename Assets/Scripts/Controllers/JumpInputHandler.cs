@@ -8,7 +8,6 @@ namespace Assets.Scripts.Controllers
     public class JumpInputHandler : MonoBehaviour
     {
         [SerializeField] private Character character;
-        [SerializeField] private RandomJumpUi ui;
 
         [SerializeField] private float minTimeToJump;
         [SerializeField] private float maxTimeToJump;
@@ -25,13 +24,11 @@ namespace Assets.Scripts.Controllers
         private void CalculateNewTimeToJump()
         {
             currentTimeToJump = Random.Range(minTimeToJump, maxTimeToJump);
-            ui.SetCurrentRandom(currentTimeToJump);
         }
 
         private void Update()
         {
             currentTimer += Time.deltaTime;
-            ui.SetCurrentValue(currentTimer);
 
             if (currentTimer >= currentTimeToJump)
             {
