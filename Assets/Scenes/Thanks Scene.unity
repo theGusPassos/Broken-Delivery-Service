@@ -249,6 +249,7 @@ GameObject:
   - component: {fileID: 577213532}
   - component: {fileID: 577213531}
   - component: {fileID: 577213533}
+  - component: {fileID: 577213534}
   m_Layer: 5
   m_Name: Quit Game
   m_TagString: Untagged
@@ -337,6 +338,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b159a66bbd614a047af4df0b51fd8eb7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &577213534
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 577213529}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6329bc0bcea9b1d4180c25afd115db67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &796617311
