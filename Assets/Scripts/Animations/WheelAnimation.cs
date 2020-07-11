@@ -20,6 +20,5 @@ namespace Assets.Scripts.Animations
         {
             isRunning = velocity > 0;
         }
-
     }
 }

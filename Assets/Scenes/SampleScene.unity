@@ -130,6 +130,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 25684240}
+  - component: {fileID: 25684241}
   m_Layer: 0
   m_Name: Camera Objs
   m_TagString: Untagged
@@ -156,6 +157,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &25684241
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 25684239}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3879c837f5615544a95ed399b8e0e20b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &167158295
 GameObject:
   m_ObjectHideFlags: 0
@@ -1493,9 +1506,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b118302e37d55a4899d0efef27e43af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deathPrefab: {fileID: 5463619910696643294, guid: 137c27202af8ba6439d294e4d6405c00,
+    type: 3}
   character: {fileID: 1010856776}
   jumpInputHandler: {fileID: 1622094818}
-  timeToRespawn: 0.5
+  timeToRespawn: 1.5
+  deathCameraShake:
+    timeToShake: 0.1
+    magnitude: 0.011
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0

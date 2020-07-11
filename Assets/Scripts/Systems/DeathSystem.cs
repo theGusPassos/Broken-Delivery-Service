@@ -1,6 +1,6 @@
-﻿using Assets.Scripts.Controllers;
+﻿using Assets.Scripts.Cameras;
+using Assets.Scripts.Controllers;
 using System.Collections;
-using System.Security.Cryptography;
 using UnityEngine;
 
 namespace Assets.Scripts.Systems
@@ -9,9 +9,11 @@ namespace Assets.Scripts.Systems
     {
         public static DeathSystem Instance;
 
+        [SerializeField] private GameObject deathPrefab;
         [SerializeField] private GameObject character;
         [SerializeField] private JumpInputHandler jumpInputHandler;
         [SerializeField] private float timeToRespawn;
+        [SerializeField] private CameraShakeData deathCameraShake;
 
         private void Awake()
         {
@@ -24,6 +26,8 @@ namespace Assets.Scripts.Systems
         public void RespawnPlayerAt(Transform respawn)
         {
             character.SetActive(false);
+            Instantiate(deathPrefab, character.transform.position, character.transform.rotation);
+            CameraShaker.Instance.Shake(deathCameraShake);
 
             StartCoroutine(Respawn(respawn));
         }
