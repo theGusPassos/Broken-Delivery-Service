@@ -10,6 +10,7 @@ namespace Assets.Scripts.Ui.Options
 
         public void OnPointerDown(PointerEventData eventData)
         {
+            SoundSystem.Instance.PlaySoundEffect(OptionSounds.Instance.OnHoverClip);
             gameStarter.StartGame();
         }
     }
