@@ -8,13 +8,7 @@ namespace Assets.Scripts.Systems
     {
         [SerializeField] private string gameSceneName;
 
-        private void Update()
-        {
-            if (Input.anyKeyDown)
-            {
-                StartCoroutine(LoadScene());
-            }
-        }
+        public void StartGame() => StartCoroutine(LoadScene());
 
         private IEnumerator LoadScene()
         {

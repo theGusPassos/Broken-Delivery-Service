@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-namespace Assets.Scripts.Ui
+namespace Assets.Scripts.Ui.Options
 {
     public class Option : MonoBehaviour, IPointerEnterHandler, IPointerDownHandler
     {

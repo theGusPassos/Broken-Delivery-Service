@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Assets.Scripts.Ui
+namespace Assets.Scripts.Ui.Options
 {
     public class OptionSounds : MonoBehaviour
     {
