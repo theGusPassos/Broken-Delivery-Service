@@ -10,8 +10,6 @@ namespace Assets.Scripts.Feedback
 
         private float distanceFromNormalToCrouched;
 
-        private Transform targetPosition;
-
         private float maxValue;
 
         private void Awake()
@@ -19,7 +17,7 @@ namespace Assets.Scripts.Feedback
             distanceFromNormalToCrouched = Mathf.Abs(normalPosition.position.y - crouchedPosition.position.y);
         }
 
-        public void ResetPosition() => targetPosition = normalPosition;
+        public void ResetPosition() => robotBody.transform.position = normalPosition.position;
 
         public void SetMaxValue(float maxValue) => this.maxValue = maxValue;
 
