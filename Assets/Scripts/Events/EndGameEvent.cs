@@ -1,4 +1,4 @@
-﻿using Assets.Scripts.Systems;
+﻿using Assets.Scripts.Cutscene;
 using UnityEngine;
 
 namespace Assets.Scripts
@@ -7,9 +7,11 @@ namespace Assets.Scripts
     [RequireComponent(typeof(Rigidbody2D))]
     public class EndGameEvent : MonoBehaviour
     {
+        [SerializeField] private EndCutscene endCutscene;
+
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            EndGameSystem.Instance.OnEndGameEvent();
+            endCutscene.StartEndCutscene();
         }
     }
 }
