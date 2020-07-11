@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Assets.Scripts.Systems;
+using UnityEngine;
 
 namespace Assets.Scripts.Physics
 {
@@ -24,6 +25,8 @@ namespace Assets.Scripts.Physics
         private bool walkingBackwards = false;
 
         private bool onSecondJump = false;
+
+        [SerializeField] private AudioClip jumpSound;
 
         private void Awake()
         {
@@ -52,6 +55,7 @@ namespace Assets.Scripts.Physics
         {
             if (collision.info.bellow || CanJumpAgain())
             {
+                SoundSystem.Instance.PlaySoundEffect(jumpSound);
                 currentVelocity.y = jumpVelocity;
             }
         }

@@ -4,12 +4,23 @@ namespace Assets.Scripts.Systems
 {
     public class SoundSystem : MonoBehaviour
     {
-        [SerializeField] private AudioClip mainTheme;
-        [SerializeField] private AudioSource audioSource;
+        public static SoundSystem Instance;
+
+        private AudioSource audioSource;
 
         private void Awake()
         {
-            audioSource.PlayOneShot(mainTheme);
+            if (Instance != null)
+                Destroy(gameObject);
+
+            Instance = this;
+
+            audioSource = GetComponent<AudioSource>();
+        }
+
+        public void PlaySoundEffect(AudioClip audioClip)
+        {
+            audioSource.PlayOneShot(audioClip);
         }
     }
 }
