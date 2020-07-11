@@ -860,6 +860,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   character: {fileID: 1010856779}
   jumpFeedback: {fileID: 256126976}
+  timeToWaitBeforePreparingToJump: 2
   minTimeToJump: 1
   maxTimeToJump: 2
   timeToWaitWithJumpPressed: 0.5

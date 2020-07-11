@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Assets.Scripts.Feedback
 {
@@ -7,12 +6,14 @@ namespace Assets.Scripts.Feedback
     {
         private SpriteRenderer spriteRenderer;
         [SerializeField] private Color targetColor;
+        private Color noAlphaColor;
 
         private float maxValue;
 
         private void Awake()
         {
             spriteRenderer = GetComponent<SpriteRenderer>();
+            noAlphaColor = new Color(0, 0, 0, 0);
         }
 
         private Color CalcTargetColor(float currentValue)
@@ -23,6 +24,8 @@ namespace Assets.Scripts.Feedback
 
             return currentColor;
         }
+
+        public void ResetColor() => spriteRenderer.color = noAlphaColor;
 
         public void SetMaxValue(float maxValue) => this.maxValue = maxValue;
 
