@@ -1,4 +1,5 @@
-﻿using Assets.Scripts.Systems;
+﻿using Assets.Scripts.Animations;
+using Assets.Scripts.Systems;
 using UnityEngine;
 
 namespace Assets.Scripts.Physics
@@ -25,6 +26,8 @@ namespace Assets.Scripts.Physics
         private bool walkingBackwards = false;
 
         private bool onSecondJump = false;
+
+        [SerializeField] private WheelAnimation wheelAnimation;
 
         [SerializeField] private AudioClip jumpSound;
         [SerializeField] private AudioClip secondJumpSound;
@@ -96,11 +99,9 @@ namespace Assets.Scripts.Physics
         {
             ApplyGravityIfEnabled();
             TestFaceSwap();
-            HandleHorizontalMovement();
+            currentVelocity.x = xInput * moveSpeed;
 
             Vector2 velocity = currentVelocity * Time.deltaTime;
-
-            bool wasGrounded = collision.info.bellow;
 
             collision.UpdateRayOrigins();
             collision.info.Reset();
@@ -115,15 +116,12 @@ namespace Assets.Scripts.Physics
                 collision.HandleVerticalCollisions(ref velocity, verticalLayerMask);
             }
 
+            wheelAnimation.SetVelocity(Mathf.Abs(velocity.x));
             transform.Translate(velocity);
 
             if (collision.info.bellow)
             {
                 if (onSecondJump) onSecondJump = false;
-
-                if (wasGrounded)
-                {
-                }
             }
 
             if (collision.info.bellow || collision.info.above)
@@ -148,11 +146,6 @@ namespace Assets.Scripts.Physics
         {
             facingRight = !facingRight;
             transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
-        }
-
-        private void HandleHorizontalMovement()
-        {
-            currentVelocity.x = xInput * moveSpeed;
         }
     }
 
