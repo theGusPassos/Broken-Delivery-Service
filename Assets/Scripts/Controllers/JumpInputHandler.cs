@@ -20,6 +20,8 @@ namespace Assets.Scripts.Controllers
 
         private State currentState = State.WAITING;
 
+        [SerializeField] private bool manualJump;
+
         private void Awake()
         {
             CalculateNewTimeToJump();
@@ -33,16 +35,26 @@ namespace Assets.Scripts.Controllers
 
         private void Update()
         {
-            currentTimer += Time.deltaTime;
-
-            if (currentState == State.WAITING)
-                WaitToJump();
-            else if (currentState == State.PREPARING_JUMP)
-                ExecutePreparingToJump();
+            if (manualJump)
+            {
+                if (Input.GetKeyDown(KeyCode.Space))
+                    character.OnJumpButtonDown();
+                else if (Input.GetKeyUp(KeyCode.Space))
+                    character.OnJumpButtonUp();
+            }
+            else
+            {
+                if (currentState == State.WAITING)
+                    WaitToJump();
+                else if (currentState == State.PREPARING_JUMP)
+                    ExecutePreparingToJump();
+            }
         }
 
         private void WaitToJump()
         {
+            currentTimer += Time.deltaTime;
+
             if (currentTimer > timeToWaitBeforePreparingToJump)
             {
                 currentTimer = 0;
@@ -52,18 +64,24 @@ namespace Assets.Scripts.Controllers
 
         private void ExecutePreparingToJump()
         {
+            currentTimer += Time.deltaTime;
+
             jumpFeedback.SetCurrentTimeToJump(currentTimer);
 
             if (currentTimer >= currentTimeToJump)
             {
-                currentTimer = 0;
-                CalculateNewTimeToJump();
-                jumpFeedback.ResetColor();
-
                 StartCoroutine(Jump());
 
-                currentState = State.WAITING;
+                ResetAfterJump();
             }
+        }
+
+        public void ResetAfterJump()
+        {
+            currentTimer = 0;
+            CalculateNewTimeToJump();
+            jumpFeedback.ResetColor();
+            currentState = State.WAITING;
         }
 
         private IEnumerator Jump()
