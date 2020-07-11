@@ -1,13 +1,17 @@
 ﻿using Assets.Scripts.Ui;
 using System;
+using System.Collections;
 using System.IO;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Assets.Scripts.Cutscene
 {
     public class StartCutscene : MonoBehaviour
     {
+        [SerializeField] private string gameSceneName;
+        [SerializeField] private float timeToWaitBeforeLoadingScene;
         [SerializeField] private TextData[] textsData;
 
         private int currentIndex = 0; 
@@ -15,6 +19,8 @@ namespace Assets.Scripts.Cutscene
 
         private bool showing = false;
         private float currentTime = 0;
+
+        private bool active = true;
 
         private void Awake()
         {
@@ -32,12 +38,15 @@ namespace Assets.Scripts.Cutscene
 
             if (currentIndex >= textsData.Length)
             {
-                this.enabled = false;
+                active = false;
+                StartCoroutine(LoadScene());
             }
         }
 
         private void Update()
         {
+            if (!active) return;
+
             currentTime += Time.deltaTime;
 
             if (!showing)
@@ -60,6 +69,20 @@ namespace Assets.Scripts.Cutscene
                 }
             }
         }
+        
+        private IEnumerator LoadScene()
+        {
+            yield return new WaitForSeconds(timeToWaitBeforeLoadingScene);
+
+            AsyncOperation loading = SceneManager.LoadSceneAsync(gameSceneName);
+
+            while (!loading.isDone)
+            {
+                Debug.Log("loading");
+                yield return null;
+            }
+        }
+
     }
 
     [System.Serializable]
