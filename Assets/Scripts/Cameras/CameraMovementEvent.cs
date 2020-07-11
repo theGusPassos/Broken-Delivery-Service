@@ -9,10 +9,15 @@ namespace Assets.Scripts.Cameras
     {
         [SerializeField] private Transform cameraTargetPosition;
 
+        private bool used = false;
+
         private void OnTriggerEnter2D(Collider2D collision)
         {
+            if (used) return;
+
             CameraMover.Instance.SetTarget(cameraTargetPosition);
             SoundSystem.Instance.PlayCheckpoint();
+            used = true;
         }
     }
 }
