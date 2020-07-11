@@ -8,6 +8,7 @@ namespace Assets.Scripts.Physics
     public class Character : MonoBehaviour
     {
         [HideInInspector] public CustomCollision collision;
+        [SerializeField] private CustomCollision bodyCollision;
         private Vector2 currentVelocity;
 
         public bool facingRight = true;
@@ -106,19 +107,22 @@ namespace Assets.Scripts.Physics
             Vector2 velocity = currentVelocity * Time.deltaTime;
 
             collision.UpdateRayOrigins();
+            bodyCollision.UpdateRayOrigins();
             collision.info.Reset();
+            bodyCollision.info.Reset();
 
             if (velocity.x != 0)
             {
                 collision.HandleHorizontalCollisions(ref velocity, collisionMask);
+                bodyCollision.HandleHorizontalCollisions(ref velocity, collisionMask);
             }
             if (velocity.y != 0)
             {
-                LayerMask verticalLayerMask = collisionMask;
-                collision.HandleVerticalCollisions(ref velocity, verticalLayerMask);
+                collision.HandleVerticalCollisions(ref velocity, collisionMask);
             }
 
-            wheelAnimation.SetVelocity(Mathf.Abs(velocity.x));
+            if (wheelAnimation != null) 
+                wheelAnimation.SetVelocity(Mathf.Abs(velocity.x));
             transform.Translate(velocity);
 
             if (collision.info.bellow)
