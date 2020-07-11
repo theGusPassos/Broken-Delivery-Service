@@ -2627,6 +2627,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   jumpSound: {fileID: 8300000, guid: 7fc81f40ce736db4e8424d40c0fbbe4c, type: 3}
+  secondJumpSound: {fileID: 8300000, guid: 647c5ba4a678a08459727c011cbe72d5, type: 3}
 --- !u!114 &1010856780
 MonoBehaviour:
   m_ObjectHideFlags: 0
