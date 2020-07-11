@@ -533,7 +533,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameSceneName: SampleScene
-  timeToWaitBeforeLoadingScene: 1
+  timeToWaitBeforeLoadingScene: 2
   textsData:
   - mesh: {fileID: 1190302846}
     speedToAppear: 0.5
@@ -564,12 +564,12 @@ MonoBehaviour:
     speedToAppear: 0.5
     timeToAppear: 2.5
     speedToDisappear: 0.5
-    timeToDisappear: 20
+    timeToDisappear: 1
   - mesh: {fileID: 2127660848}
     speedToAppear: 0.5
     timeToAppear: 1.5
     speedToDisappear: 0.5
-    timeToDisappear: 20
+    timeToDisappear: 1
 --- !u!1 &675675285
 GameObject:
   m_ObjectHideFlags: 0
