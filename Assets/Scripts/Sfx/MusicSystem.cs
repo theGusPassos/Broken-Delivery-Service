@@ -51,7 +51,7 @@ namespace Assets.Scripts.Sfx
         }
 
         [ContextMenu("change music")]
-        public void PlayEndTheme()
+        public void ChangeMusic()
         {
             changing = current;
             current = current == 0 ? 1 : 0;
