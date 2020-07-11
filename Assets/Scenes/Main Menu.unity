@@ -225,8 +225,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: Gustavo Passos
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 56262d41bd1a7914b8400d6a7cc84290, type: 2}
+  m_sharedMaterial: {fileID: 4907655223943292419, guid: 56262d41bd1a7914b8400d6a7cc84290,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -736,8 +737,9 @@ MonoBehaviour:
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 56262d41bd1a7914b8400d6a7cc84290, type: 2}
+  m_sharedMaterial: {fileID: 4907655223943292419, guid: 56262d41bd1a7914b8400d6a7cc84290,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1031,10 +1033,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Fl\xE1vio Cravero"
+  m_text: Flavio Cravero
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 56262d41bd1a7914b8400d6a7cc84290, type: 2}
+  m_sharedMaterial: {fileID: 4907655223943292419, guid: 56262d41bd1a7914b8400d6a7cc84290,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1351,8 +1354,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: Start Game
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 9b66e7fa95dccb8478481e09998d6aef, type: 2}
+  m_sharedMaterial: {fileID: -5016012927145185626, guid: 9b66e7fa95dccb8478481e09998d6aef,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1507,8 +1511,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: sound design by
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 56262d41bd1a7914b8400d6a7cc84290, type: 2}
+  m_sharedMaterial: {fileID: 4907655223943292419, guid: 56262d41bd1a7914b8400d6a7cc84290,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1803,8 +1808,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: code by
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 56262d41bd1a7914b8400d6a7cc84290, type: 2}
+  m_sharedMaterial: {fileID: 4907655223943292419, guid: 56262d41bd1a7914b8400d6a7cc84290,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1959,8 +1965,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: art by
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 56262d41bd1a7914b8400d6a7cc84290, type: 2}
+  m_sharedMaterial: {fileID: 4907655223943292419, guid: 56262d41bd1a7914b8400d6a7cc84290,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
