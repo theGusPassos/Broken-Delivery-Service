@@ -4,34 +4,32 @@ namespace Assets.Scripts.Feedback
 {
     public class RandomJumpFeedback : MonoBehaviour
     {
-        private SpriteRenderer spriteRenderer;
-        [SerializeField] private Color targetColor;
-        private Color noAlphaColor;
+        [SerializeField] private Transform robotBody;
+        [SerializeField] private Transform normalPosition;
+        [SerializeField] private Transform crouchedPosition;
+
+        private float distanceFromNormalToCrouched;
+
+        private Transform targetPosition;
 
         private float maxValue;
 
         private void Awake()
         {
-            spriteRenderer = GetComponent<SpriteRenderer>();
-            noAlphaColor = new Color(0, 0, 0, 0);
+            distanceFromNormalToCrouched = Mathf.Abs(normalPosition.position.y - crouchedPosition.position.y);
         }
 
-        private Color CalcTargetColor(float currentValue)
-        {
-            var percentage = currentValue * 100 / maxValue;
-            var currentColor = targetColor;
-            currentColor.a *= (percentage / 100);
-
-            return currentColor;
-        }
-
-        public void ResetColor() => spriteRenderer.color = noAlphaColor;
+        public void ResetPosition() => targetPosition = normalPosition;
 
         public void SetMaxValue(float maxValue) => this.maxValue = maxValue;
 
         public void SetCurrentTimeToJump(float currentValue)
         {
-            spriteRenderer.color = CalcTargetColor(currentValue);
+            var timePercentage = currentValue * 100 / maxValue;
+            var distancePercentage =  distanceFromNormalToCrouched * (timePercentage / 100);
+
+            var newPosition = normalPosition.position - new Vector3(0, distancePercentage);
+            robotBody.transform.position = newPosition;
         }
     }
 }

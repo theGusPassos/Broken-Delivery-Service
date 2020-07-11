@@ -81,7 +81,7 @@ namespace Assets.Scripts.Controllers
             character.OnJumpButtonUp();
             currentTimer = 0;
             CalculateNewTimeToJump();
-            jumpFeedback.ResetColor();
+            jumpFeedback.ResetPosition();
             currentState = State.WAITING;
         }
 
