@@ -1,5 +1,5 @@
-﻿using Assets.Scripts.Physics;
-using Assets.Scripts.UI;
+﻿using Assets.Scripts.Feedback;
+using Assets.Scripts.Physics;
 using System.Collections;
 using UnityEngine;
 
@@ -8,6 +8,7 @@ namespace Assets.Scripts.Controllers
     public class JumpInputHandler : MonoBehaviour
     {
         [SerializeField] private Character character;
+        [SerializeField] private RandomJumpFeedback jumpFeedback;
 
         [SerializeField] private float minTimeToJump;
         [SerializeField] private float maxTimeToJump;
@@ -24,11 +25,13 @@ namespace Assets.Scripts.Controllers
         private void CalculateNewTimeToJump()
         {
             currentTimeToJump = Random.Range(minTimeToJump, maxTimeToJump);
+            jumpFeedback.SetMaxValue(currentTimeToJump);
         }
 
         private void Update()
         {
             currentTimer += Time.deltaTime;
+            jumpFeedback.SetCurrentTimeToJump(currentTimer);
 
             if (currentTimer >= currentTimeToJump)
             {
