@@ -7,6 +7,18 @@ namespace Assets.Scripts.Systems
         [SerializeField] private GameObject pauseGameCanvas;
         private bool paused = false;
 
+        public void ResumeGame()
+        {
+            Time.timeScale = 1;
+            paused = false;
+            pauseGameCanvas.SetActive(paused);
+        }
+
+        public void QuitGame()
+        {
+            Application.Quit();
+        }
+
         private void Update()
         {
             if (Input.GetKeyDown(KeyCode.Escape))
