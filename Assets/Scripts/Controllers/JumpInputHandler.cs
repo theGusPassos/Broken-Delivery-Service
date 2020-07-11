@@ -78,6 +78,7 @@ namespace Assets.Scripts.Controllers
 
         public void ResetAfterJump()
         {
+            character.OnJumpButtonUp();
             currentTimer = 0;
             CalculateNewTimeToJump();
             jumpFeedback.ResetColor();

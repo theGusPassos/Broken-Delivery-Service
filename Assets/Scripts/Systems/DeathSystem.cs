@@ -30,10 +30,10 @@ namespace Assets.Scripts.Systems
 
         private IEnumerator Respawn(Transform respawn)
         {
+            jumpInputHandler.ResetAfterJump();
             yield return new WaitForSeconds(timeToRespawn);
 
             character.transform.position = respawn.position;
-            jumpInputHandler.ResetAfterJump();
             character.SetActive(true);
         }
     }
