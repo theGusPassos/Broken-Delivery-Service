@@ -2626,6 +2626,7 @@ MonoBehaviour:
   collisionMask:
     serializedVersion: 2
     m_Bits: 512
+  jumpSound: {fileID: 8300000, guid: 7fc81f40ce736db4e8424d40c0fbbe4c, type: 3}
 --- !u!114 &1010856780
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2967,8 +2968,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a4511693b5bf5c40b5a4e9781632237, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainTheme: {fileID: 8300000, guid: aa8a053c8f66d2c408d24a0b4326d20b, type: 3}
-  audioSource: {fileID: 1267195665}
 --- !u!82 &1267195665
 AudioSource:
   m_ObjectHideFlags: 0
