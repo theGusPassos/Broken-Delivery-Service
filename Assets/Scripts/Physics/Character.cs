@@ -27,6 +27,7 @@ namespace Assets.Scripts.Physics
         private bool onSecondJump = false;
 
         [SerializeField] private AudioClip jumpSound;
+        [SerializeField] private AudioClip secondJumpSound;
 
         private void Awake()
         {
@@ -48,14 +49,19 @@ namespace Assets.Scripts.Physics
         public void SetXInput(float xInput)
         {
             walkingBackwards = false;
-            this.xInput = xInput; 
+            this.xInput = xInput;
         }
 
         public void OnJumpButtonDown()
         {
-            if (collision.info.bellow || CanJumpAgain())
+            if (collision.info.bellow) 
             {
                 SoundSystem.Instance.PlaySoundEffect(jumpSound);
+                currentVelocity.y = jumpVelocity;
+            }
+            else if (CanJumpAgain())
+            {
+                SoundSystem.Instance.PlaySoundEffect(secondJumpSound);
                 currentVelocity.y = jumpVelocity;
             }
         }
@@ -128,7 +134,7 @@ namespace Assets.Scripts.Physics
 
         private void ApplyGravityIfEnabled()
         {
-                currentVelocity.y += gravity * Time.deltaTime;
+            currentVelocity.y += gravity * Time.deltaTime;
         }
 
         private void TestFaceSwap()
@@ -146,7 +152,7 @@ namespace Assets.Scripts.Physics
 
         private void HandleHorizontalMovement()
         {
-                    currentVelocity.x = xInput * moveSpeed;
+            currentVelocity.x = xInput * moveSpeed;
         }
     }
 
