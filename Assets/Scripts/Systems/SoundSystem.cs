@@ -11,6 +11,5 @@ namespace Assets.Scripts.Systems
         {
             audioSource.PlayOneShot(mainTheme);
         }
-
     }
 }
