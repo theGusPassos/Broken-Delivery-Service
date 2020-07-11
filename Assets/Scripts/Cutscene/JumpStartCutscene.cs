@@ -12,8 +12,12 @@ namespace Assets.Scripts.Cutscene
         [SerializeField] private float speed;
         [SerializeField] private string gameSceneName;
 
+        private bool sceneLoaded = false;
+
         private void Update()
         {
+            if (sceneLoaded) return;
+
             if (Input.anyKey)
             {
                 skipMessage.enabled = true;
@@ -22,6 +26,7 @@ namespace Assets.Scripts.Cutscene
 
                 if (skipMessage.color.r <= 0)
                 {
+                    sceneLoaded = true;
                     StartCoroutine(LoadScene());
                 }
             }
