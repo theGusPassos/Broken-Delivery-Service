@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Assets.Scripts.Systems;
+using UnityEngine;
 
 namespace Assets.Scripts.Cameras
 {
@@ -11,6 +12,7 @@ namespace Assets.Scripts.Cameras
         private void OnTriggerEnter2D(Collider2D collision)
         {
             CameraMover.Instance.SetTarget(cameraTargetPosition);
+            SoundSystem.Instance.PlayCheckpoint();
         }
     }
 }

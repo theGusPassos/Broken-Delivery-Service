@@ -6,6 +6,8 @@ namespace Assets.Scripts.Systems
     {
         public static SoundSystem Instance;
 
+        [SerializeField] private AudioClip checkpointClip;
+
         private AudioSource audioSource;
 
         private void Awake()
@@ -21,6 +23,11 @@ namespace Assets.Scripts.Systems
         public void PlaySoundEffect(AudioClip audioClip)
         {
             audioSource.PlayOneShot(audioClip);
+        }
+
+        public void PlayCheckpoint()
+        {
+            audioSource.PlayOneShot(checkpointClip);
         }
     }
 }
