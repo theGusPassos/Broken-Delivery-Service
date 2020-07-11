@@ -930,6 +930,7 @@ GameObject:
   m_Component:
   - component: {fileID: 426007023}
   - component: {fileID: 426007024}
+  - component: {fileID: 426007025}
   m_Layer: 0
   m_Name: Robot Body
   m_TagString: Untagged
@@ -1001,6 +1002,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &426007025
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 426007022}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f9c983af4259ef044aaae4d27b03f16e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &434575734
 GameObject:
   m_ObjectHideFlags: 0
@@ -2847,6 +2867,7 @@ MonoBehaviour:
   collisionMask:
     serializedVersion: 2
     m_Bits: 512
+  robotAnimator: {fileID: 426007025}
   wheelAnimation: {fileID: 1574767536}
   jumpSound: {fileID: 8300000, guid: 7fc81f40ce736db4e8424d40c0fbbe4c, type: 3}
   secondJumpSound: {fileID: 8300000, guid: 647c5ba4a678a08459727c011cbe72d5, type: 3}

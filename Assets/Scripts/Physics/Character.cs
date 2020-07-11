@@ -27,6 +27,7 @@ namespace Assets.Scripts.Physics
 
         private bool onSecondJump = false;
 
+        [SerializeField] private Animator robotAnimator;
         [SerializeField] private WheelAnimation wheelAnimation;
 
         [SerializeField] private AudioClip jumpSound;
@@ -64,6 +65,7 @@ namespace Assets.Scripts.Physics
             }
             else if (CanJumpAgain())
             {
+                robotAnimator.Play("jetpack-on");
                 SoundSystem.Instance.PlaySoundEffect(secondJumpSound);
                 currentVelocity.y = jumpVelocity;
             }
