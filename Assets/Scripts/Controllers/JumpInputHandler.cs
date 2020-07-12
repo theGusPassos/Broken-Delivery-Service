@@ -11,26 +11,27 @@ namespace Assets.Scripts.Controllers
         [SerializeField] private RandomJumpFeedback jumpFeedback;
 
         [SerializeField] private float timeToWaitBeforePreparingToJump;
-        [SerializeField] private float minTimeToJump;
-        [SerializeField] private float maxTimeToJump;
+        [SerializeField] private float timeToJump;
         [SerializeField] private float timeToWaitWithJumpPressed;
 
         private float currentTimer = 0;
-        private float currentTimeToJump = 0;
 
         private State currentState = State.WAITING;
+
+        private bool wasNotGrounded;
 
         [SerializeField] private bool manualJump;
 
         private void Awake()
         {
-            CalculateNewTimeToJump();
+            jumpFeedback.SetMaxValue(timeToJump);
         }
 
-        private void CalculateNewTimeToJump()
+        public void SetWaiting()
         {
-            currentTimeToJump = Random.Range(minTimeToJump, maxTimeToJump);
-            jumpFeedback.SetMaxValue(currentTimeToJump);
+            jumpFeedback.ResetPosition();
+            currentState = State.WAITING_GROUND;
+            currentTimer = 0;
         }
 
         private void Update()
@@ -48,6 +49,20 @@ namespace Assets.Scripts.Controllers
                     WaitToJump();
                 else if (currentState == State.PREPARING_JUMP)
                     ExecutePreparingToJump();
+                else if (currentState == State.WAITING_GROUND)
+                {
+                    if (!character.collision.info.bellow)
+                    {
+                        wasNotGrounded = true;
+                    }
+
+                    if (wasNotGrounded && character.collision.info.bellow)
+                    {
+                        currentState = State.WAITING;
+                        currentTimer = 0;
+                        wasNotGrounded = false;
+                    }
+                }
             }
         }
 
@@ -68,36 +83,39 @@ namespace Assets.Scripts.Controllers
 
             jumpFeedback.SetCurrentTimeToJump(currentTimer);
 
-            if (currentTimer >= currentTimeToJump)
+            if (currentTimer >= timeToJump)
             {
                 StartCoroutine(Jump());
-
                 ResetAfterJump();
             }
         }
 
         public void ResetAfterJump()
         {
-            character.OnJumpButtonUp();
             currentTimer = 0;
-            CalculateNewTimeToJump();
             jumpFeedback.ResetPosition();
-            currentState = State.WAITING;
+            currentState = State.WAITING_GROUND;
+        }
+
+        public void ResetAfterDeath()
+        {
+            ResetAfterJump();
+            character.OnJumpButtonUp();
+            wasNotGrounded = true;
         }
 
         private IEnumerator Jump()
         {
             character.OnJumpButtonDown();
-
             yield return new WaitForSeconds(timeToWaitWithJumpPressed);
-
             character.OnJumpButtonUp();
         }
 
         private enum State
         {
             WAITING,
-            PREPARING_JUMP
+            PREPARING_JUMP,
+            WAITING_GROUND
         }
     }
 }
