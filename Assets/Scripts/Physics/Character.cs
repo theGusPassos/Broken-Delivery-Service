@@ -121,8 +121,7 @@ namespace Assets.Scripts.Physics
                 collision.HandleVerticalCollisions(ref velocity, collisionMask);
             }
 
-            if (wheelAnimation != null) 
-                wheelAnimation.SetVelocity(Mathf.Abs(velocity.x));
+            wheelAnimation.SetVelocity(Mathf.Abs(velocity.x));
             transform.Translate(velocity);
 
             if (collision.info.bellow)

@@ -1154,8 +1154,34 @@ PrefabInstance:
       propertyPath: m_Color.a
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1032745858158661309, guid: 3c0a718071cf5a347a56dee149719a50,
+        type: 3}
+      propertyPath: robotBody
+      value: 
+      objectReference: {fileID: 924258386}
+    - target: {fileID: 4488620418310226917, guid: 3c0a718071cf5a347a56dee149719a50,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4488620418310226917, guid: 3c0a718071cf5a347a56dee149719a50,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4488620418310226917, guid: 3c0a718071cf5a347a56dee149719a50,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3c0a718071cf5a347a56dee149719a50, type: 3}
+--- !u!4 &924258386 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1032745858462771026, guid: 3c0a718071cf5a347a56dee149719a50,
+    type: 3}
+  m_PrefabInstance: {fileID: 924258385}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1011619289
 GameObject:
   m_ObjectHideFlags: 0

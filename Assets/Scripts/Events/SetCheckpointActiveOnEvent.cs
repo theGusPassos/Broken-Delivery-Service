@@ -11,6 +11,7 @@ namespace Assets.Scripts.Events
         {
             if (used) return;
 
+            animator.Play("checkpoint-on");
             used = true;
         }
     }
