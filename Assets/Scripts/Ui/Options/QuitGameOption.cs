@@ -8,6 +8,12 @@ namespace Assets.Scripts.Ui.Options
     {
         public void OnPointerDown(PointerEventData eventData)
         {
+            Debug.Log("qutting game");
+            StartCoroutine(QuitGame());
+        }
+
+        public void Quit()
+        {
             StartCoroutine(QuitGame());
         }
 
