@@ -15,6 +15,7 @@ namespace Assets.Scripts.Systems
         [SerializeField] private float timeToRespawn;
         [SerializeField] private CameraShakeData deathCameraShake;
         [SerializeField] private AudioClip deathSound;
+        [SerializeField] private DeathCounter deathCounter;
 
         private void Awake()
         {
@@ -26,6 +27,7 @@ namespace Assets.Scripts.Systems
 
         public void RespawnPlayerAt(Transform respawn)
         {
+            deathCounter.AddDeath();
             character.SetActive(false);
             Instantiate(deathPrefab, character.transform.position, character.transform.rotation);
             CameraShaker.Instance.Shake(deathCameraShake);
