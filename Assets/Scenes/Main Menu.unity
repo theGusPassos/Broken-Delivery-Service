@@ -1044,6 +1044,11 @@ PrefabInstance:
       propertyPath: moveSpeed
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 1032745857873202678, guid: 3c0a718071cf5a347a56dee149719a50,
+        type: 3}
+      propertyPath: ignoreSound
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1032745857873202679, guid: 3c0a718071cf5a347a56dee149719a50,
         type: 3}
       propertyPath: m_LocalPosition.x

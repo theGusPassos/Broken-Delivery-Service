@@ -34,6 +34,8 @@ namespace Assets.Scripts.Physics
         [SerializeField] private AudioClip jumpSound;
         [SerializeField] private AudioClip secondJumpSound;
 
+        [SerializeField] private bool ignoreSound;
+
         private void Awake()
         {
             collision = GetComponent<CustomCollision>();
@@ -61,7 +63,7 @@ namespace Assets.Scripts.Physics
         {
             if (collision.info.bellow) 
             {
-                SoundSystem.Instance.PlaySoundEffect(jumpSound);
+                if (!ignoreSound) SoundSystem.Instance.PlaySoundEffect(jumpSound);
                 currentVelocity.y = jumpVelocity;
             }
             else if (CanJumpAgain())
