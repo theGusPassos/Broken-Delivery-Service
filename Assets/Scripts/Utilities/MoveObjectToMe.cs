@@ -15,7 +15,7 @@ namespace Assets.Scripts.Utilities
         [ContextMenu("reset position")]
         public void ResetPosition()
         {
-            target.position = Vector3.zero;
+            target.position = Vector3.zero + new Vector3(0, 0, -10);
         }
     }
 }

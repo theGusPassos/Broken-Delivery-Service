@@ -1,5 +1,6 @@
 ﻿using Assets.Scripts.Controllers;
 using Assets.Scripts.Physics;
+using Assets.Scripts.Sfx;
 using UnityEngine;
 
 namespace Assets.Scripts.Cutscene
@@ -23,6 +24,7 @@ namespace Assets.Scripts.Cutscene
 
         public void StartEndCutscene()
         {
+            MusicSystem.Instance.PlayLastTheme();
             DisableInputs();
 
             walkingForward = true;

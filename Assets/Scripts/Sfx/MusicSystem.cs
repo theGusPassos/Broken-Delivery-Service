@@ -8,7 +8,8 @@ namespace Assets.Scripts.Sfx
         public static MusicSystem Instance;
 
         [SerializeField] private AudioClip mainTheme;
-        [SerializeField] private AudioClip endTheme;
+        [SerializeField] private AudioClip secondTheme;
+        [SerializeField] private AudioClip lastTheme;
         [SerializeField] private float musicSpeed;
 
         private AudioSource[] musicSources;
@@ -63,7 +64,19 @@ namespace Assets.Scripts.Sfx
             if (current == 0)
                 PlayMusic(mainTheme);
             else
-                PlayMusic(endTheme);
+                PlayMusic(secondTheme);
+        }
+
+        [ContextMenu("play last theme")]
+        public void PlayLastTheme()
+        {
+            changing = current;
+            current = current == 0 ? 1 : 0;
+            
+            changingMusic = true;
+            musicSources[current].volume = 0;
+
+            PlayMusic(lastTheme);
         }
     }
 }
