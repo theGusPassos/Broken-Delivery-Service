@@ -22723,7 +22723,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   character: {fileID: 1010856779}
   jumpFeedback: {fileID: 256126976}
-  timeToWaitBeforePreparingToJump: 0.5
+  timeToWaitBeforePreparingToJump: 0.2
   timeToJump: 2
   timeToWaitWithJumpPressed: 0.1
   manualJump: 0
