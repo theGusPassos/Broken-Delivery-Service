@@ -20,7 +20,10 @@ namespace Assets.Scripts.Sfx
         private void Awake()
         {
             if (Instance != null)
+            {
                 Destroy(gameObject);
+                return;
+            }
 
             Instance = this;
 
