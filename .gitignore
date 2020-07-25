@@ -8,6 +8,7 @@
 /[Bb]uilds/
 /[Bb]uild/
 /[Ll]ogs/
+/WebBuild/
 /[Mm]emoryCaptures/
 
 # Never ignore Asset meta data
