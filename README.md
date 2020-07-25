@@ -1,6 +1,8 @@
 # Broken Delivery Service
 
-Game made for the 2020 GMTK Game Jam with the theme out of control. I participated in the jam with the Last Minute Team ([@flaviocravero](https://soundcloud.com/flaviocravero) and [@portluc](https://www.deviantart.com/aewron)) and we submitted this plataformer where the player doesn't choose when the character will jump.
+Game made for the 2020 GMTK Game Jam with the theme out of control.
+
+I participated in the jam with the Last Minute Team ([@flaviocravero](https://soundcloud.com/flaviocravero) and [@portluc](https://www.deviantart.com/aewron)) we submitted this plataformer where the player doesn't choose when the character will jump.
 
 ![broken delivery service image](demo/broken-delivery-service.png)
 
